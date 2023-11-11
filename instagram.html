@@ -15,6 +15,7 @@
             right: 12.5%;
             top: 4%;
             transition: all 0.8s;
+            opacity: 0;
         }
     </style>
 </head>
@@ -66,12 +67,12 @@
         console.log(imgs)
         let num = 0;
         setInterval(()=>{
-            imgs[num].style.opacity = '0'
-            num++
-            if(num >= imgs.length){
-                num = 0;
+            imgs.forEach(img=>img.style.opacity = '0')
+            imgs[num].style.opacity = '1'
+            num++;
+            if(num > imgs.length-1){
+                num = 0
             }
-            imgs[num+1].style.opacity = '1'
             console.log(num)
         },1000)
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+<h1 class="result">
+
+</h1>
+
+    <script>
+        const result = document.querySelector('.result');
+        const url = 'https://icanhazdadjoke.com';
+        const fetchJoke = async() => {
+            try{
+                result.innerHTML = 'Loading...'
+                const res =  await fetch(url,{
+                    headers:{
+                        Accept:'application/json'
+                    }
+                })
+                if(!res.ok){
+                    throw new Error('An Error Occured');
+                }else{
+                    const data = await res.json();
+                    result.innerHTML = data.joke
+                }
+                
+            }catch(error){
+                console.log(error)
+            }
+        }
+
+fetchJoke();
+    </script>
+</body>
+</html>
