@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+
+        .image{
+            position: relative;
+        }
+        .images img{
+            position: absolute;
+            right: 12.5%;
+            top: 4%;
+            transition: all 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-lg-7 m-auto">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card border-0">
+                    <div class="image">
+                        <img width="100%" src="https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk" alt="">
+                        <div class="images">
+                            <img class="pic" width="54%" src="./assets/screenshot1.png" alt="">
+                            <img class="pic" width="54%" src="./assets/screenshot2.png" alt="">
+                            <img class="pic" width="54%" src="./assets/screenshot3.png" alt="">
+                            <img class="pic" width="54%" src="./assets/screenshot4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card col-lg-9 border-1 p-3">
+
+                    <form>
+                        <img width="200px" class="d-block m-auto" src="https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png" alt="">
+                        <input type="text" placeholder="Phone, username or email" class="form-control my-2">
+                        
+                        <input class="form-control my-2" type="password" placeholder="Password" name="" id="">
+                        <button class="text-white w-100 btn btn-info my-2">
+                            Log in
+                        </button>
+                    </form>
+                    <div class="d-flex align-items-center justify-center container gap-4    ">
+                        <hr class="w-50">
+                        <p class="m-0">OR</p>
+                        <hr class="w-50">
+                    </div>
+                    <p class="text-primary text-center">
+                        Log in with facebook
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let imgs = document.querySelectorAll('.pic');
+        // console.log(imgs.length)
+        console.log(imgs)
+        let num = 0;
+        setInterval(()=>{
+            imgs[num].style.opacity = '0'
+            num++
+            if(num >= imgs.length){
+                num = 0;
+            }
+            imgs[num+1].style.opacity = '1'
+            console.log(num)
+        },1000)
+
+
+
+        </script>
+
+</body>
+</html>

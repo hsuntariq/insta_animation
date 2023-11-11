@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <title>CountDown</title>
+    <style>
+        body{
+            background: black;
+            text-align: center !important;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+            font-family: 'black ops one';
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex m-auto text-center gap-3  w-25">
+        <div class=" m-auto">
+            <h1 class="display-1 hour">02</h1>
+        </div>
+        <div class="colons">
+            <h1 class="display-1">:</h1>
+        </div>
+        <div class="m-auto">
+            <h1 class="display-1 minute">45</h1>
+        </div>
+        <div class="colons">
+            <h1 class="display-1">:</h1>
+        </div>
+        <div class="m-auto">
+            <h1 class="display-1 second">50</h1>
+        </div>
+    </div>
+
+
+    <script>
+        let h = document.querySelector('.hour'); 
+        let m = document.querySelector('.minute'); 
+        let s = document.querySelector('.second'); 
+        let hour = 1;
+        let minutes = 10;
+        let seconds = 40;
+        h.innerHTML = hour;
+        m.innerHTML = minutes;
+        s.innerHTML = seconds;
+
+    if(hour !== 0){       
+            setInterval(()=>{
+                if(hour !==-1){
+                    seconds--
+                    s.innerHTML = seconds
+                }
+            if(seconds === 0 && hour !==-1){
+                seconds = 60
+                minutes--;
+                m.innerHTML = minutes
+            }if(minutes === 0 && hour !== -1){
+                hour--
+                minutes = 60;
+                h.innerHTML = hour
+                if(h.innerHTML == '-1'){
+                    h.innerHTML = 0
+                }
+            }
+            // console.log(seconds)
+        },0.5)
+    }else{
+        hour = 0
+        h.innerHTML = hour;
+        minutes = 0
+        m.innerHTML = minutes;
+        seconds = 0
+        s.innerHTML = seconds;
+    }
+
+
+
+
+        // setTimeout(()=>{
+        //     console.log('hello world')
+        // },2000)
+
+        // setInterval(()=>{
+        //     console.log('hello world')
+        // },100)
+
+
+    </script>
+
+</body>
+</html>
